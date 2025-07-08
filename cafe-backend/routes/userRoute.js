@@ -17,6 +17,9 @@ app.use(express.json());
 
 const userRouter = express.Router();
 
+userRouter.get("/", (req, res) => {
+  res.json({ message: "Hello from server!!" })
+})
 userRouter.post("/register", register); // user registration
 userRouter.post("/login", login); // login user
 userRouter.get("/:id/profile", authenticate, profile); // view own (user) profile
