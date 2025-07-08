@@ -11,7 +11,7 @@ app.use(express.json());
 const dbuser = encodeURIComponent(process.env.DBUSER);
 const dbpass = encodeURIComponent(process.env.DBPASS);
 
-mongoose.connect(process.env.MONGODB_URL).then(() => {
+mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.ypd9d9t.mongodb.net/merncafe?retryWrites=true&w=majority&appName=Cluster0`).then(() => {
   app.listen(8000, () => {
     console.log("server started on port 8000");
     console.log("connected to db");
